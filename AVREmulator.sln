@@ -1,9 +1,33 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{D1914D86-B4F1-4FBF-BB73-003B00E91882}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AvrEmulatorCore", "AvrEmulatorCore\AvrEmulatorCore.vcxproj", "{3D51C5BA-C4A4-48F9-825B-9DA2C734566F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AvrEmulatorCoreUnitTest", "AvrEmulatorCoreUnitTest\AvrEmulatorCoreUnitTest.vcxproj", "{0C930F66-81FA-42E1-8F31-DA805CB762E1}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D51C5BA-C4A4-48F9-825B-9DA2C734566F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3D51C5BA-C4A4-48F9-825B-9DA2C734566F}.Debug|Win32.Build.0 = Debug|Win32
+		{3D51C5BA-C4A4-48F9-825B-9DA2C734566F}.Release|Win32.ActiveCfg = Release|Win32
+		{3D51C5BA-C4A4-48F9-825B-9DA2C734566F}.Release|Win32.Build.0 = Release|Win32
+		{0C930F66-81FA-42E1-8F31-DA805CB762E1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0C930F66-81FA-42E1-8F31-DA805CB762E1}.Debug|Win32.Build.0 = Debug|Win32
+		{0C930F66-81FA-42E1-8F31-DA805CB762E1}.Release|Win32.ActiveCfg = Release|Win32
+		{0C930F66-81FA-42E1-8F31-DA805CB762E1}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3D51C5BA-C4A4-48F9-825B-9DA2C734566F} = {D1914D86-B4F1-4FBF-BB73-003B00E91882}
+		{0C930F66-81FA-42E1-8F31-DA805CB762E1} = {D1914D86-B4F1-4FBF-BB73-003B00E91882}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		VisualSVNWorkingCopyRoot = .
