@@ -11,22 +11,23 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{3D51C5BA-C4A4-48F9-825B-9DA2C734566F}</ProjectGuid>
-    <RootNamespace>AvrEmulatorCore</RootNamespace>
+    <ProjectGuid>{8FB73792-9E44-4F56-A56E-F270B297F645}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>AvrEmulatorTestProject</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -38,60 +39,47 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>DLL_EXPORT;TRACE_ON;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\Projekty\AVREmulator\AVREmulator\AvrEmulatorCore;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>E:\Projekty\AVREmulator\AVREmulator\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>AvrEmulatorCore.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="ATmega8Microcontroller.h" />
-    <ClInclude Include="AvrEmualtor.h" />
-    <ClInclude Include="avremu_defs.h" />
-    <ClInclude Include="AvrMicrocontroller.h" />
-    <ClInclude Include="IMemoryLoader.h" />
-    <ClInclude Include="IntelHexFileLoader.h" />
-    <ClInclude Include="IOpcodeInterpreter.h" />
-    <ClInclude Include="IOPortDevice.h" />
-    <ClInclude Include="PeripheralCallback.h" />
-    <ClInclude Include="IPeripheralDevice.h" />
-    <ClInclude Include="Opcode.h" />
-    <ClInclude Include="StandardAVROpcodeInterpreter.h" />
-    <ClInclude Include="StandardAVROpcodeInterpreter_Functions.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="ATmega8Microcontroller.cpp" />
-    <ClCompile Include="AvrEmualtor.cpp" />
-    <ClCompile Include="AvrMicrocontroller.cpp" />
-    <ClCompile Include="IntelHexFileLoader.cpp" />
-    <ClCompile Include="PeripheralCallback.cpp" />
-    <ClCompile Include="StandardAVROpcodeInterpreter.cpp" />
-    <ClCompile Include="StandardAVROpcodeInterpreter_Functions.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="IOPortDevice.cpp">
-      <FileType>Document</FileType>
-    </ClCompile>
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
